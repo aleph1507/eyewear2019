@@ -8,42 +8,73 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        // path: 'main',
+        path: 'main',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../main/main.module#MainPageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'exhibitors',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../exhibitors/exhibitors.module#ExhibitorsPageModule'
+          },
+          {
+            path: ':exhibitorId',
+            loadChildren: '../exhibitors/ex-details/ex-details.module#ExDetailsPageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'visitors',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../visitors/visitors.module#VisitorsPageModule'
+          }
+        ]
+      },
+      {
+        path: 'venue',
+        children: [
+          {
+            path: '',
+            loadChildren: '../venue/venue.module#VenuePageModule'
+          },
+          {
+            path: 'hotels',
+            loadChildren: '../venue/hotels/hotels.module#HotelsPageModule'
+          },
+          {
+            path: 'contact',
+            loadChildren: '../venue/contact/contact.module#ContactPageModule'
+          }
+        ]
+      },
+      {
+        path: 'map',
+        children: [
+          {
+            path: '',
+            loadChildren: '../map/map.module#MapPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/main',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/main',
     pathMatch: 'full'
   }
 ];

@@ -1,0 +1,18 @@
+ion-input {
+  --placeholder-color: white;
+  --placeholder-opacity: 1;
+}
+
+.font-lg {
+  font-size: 1.8rem;
+}
+
+.inactive {
+  //color: grey;
+  cursor: pointer;
+}
+
+.scrollable-list-4 {
+  max-height: 192px;
+  overflow-y: scroll;
+}

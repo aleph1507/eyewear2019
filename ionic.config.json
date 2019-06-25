@@ -1,5 +1,7 @@
 {
   "name": "date",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

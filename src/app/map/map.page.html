@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>map</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding no-margin style="display:flex; align-items:center; align-content: center; justify-content: center; justify-items: center;">
+<!--  <embed src="assets/pdf/map.pdf" type="application/pdf" width="100%">-->
+  <pdf-viewer
+    [src]="pdfSrc"
+    [render-text]="true"
+    [fit-to-page]="true"
+    [original-size]="false"
+    [autoresize]="true"
+    style="display:block"
+  >
+  </pdf-viewer>
+</ion-content>

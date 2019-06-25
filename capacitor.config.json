@@ -1,0 +1,7 @@
+{
+  "appId": "io.digitalorange.date2019",
+  "appName": "date",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

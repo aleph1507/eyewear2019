@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Visitors
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <div class="iframe-container">
+    <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(iframeHref)' height="100%" width="100%" no-margin no-padding frameborder="0"></iframe>
+  </div>
+</ion-content>

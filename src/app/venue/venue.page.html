@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>The Venue</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img no-padding src="/assets/img/spazio_01_1200.jpg" alt="venue"></ion-img>
+  <div class="overlay">
+    <ion-grid>
+      <div class="padding-horizontal-3">
+        <ion-row>
+          <ion-col>
+            <h1 class="screen-title-1">Eyewear Exhibition</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h2 class="screen-title-2 ion-text-uppercase">september 21-23, 2019, stazione leopolda via fratelli rosselli, 5 firenze</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="1">
+            <ion-icon class="grey-bookmark" name="bookmark"></ion-icon>
+          </ion-col>
+          <ion-col size="11" class="padding-left-1">
+            <h3 class="screen-heading-label-1 ion-text-uppercase">saturday 21 & sunday 22 <br>10.00 am -7.00 pm</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="1">
+            <ion-icon class="grey-bookmark" name="bookmark"></ion-icon>
+          </ion-col>
+          <ion-col size="11" class="padding-left-1">
+            <h3 class="screen-heading-label-1 ion-text-uppercase">monday 23 <br>10.00 am -5.00 pm</h3>
+          </ion-col>
+        </ion-row>
+      </div>
+      <ion-row>
+        <ion-col text-center>
+          <ion-button routerLink="/tabs/venue" class="button-outline width100 action-btn-1"
+            [ngClass]="{'active': (router.url === '/tabs/venue')}">Where we are</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <ion-button routerLink="hotels" class="button-outline width100 action-btn-1">Partner Hotels</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <ion-button routerLink="contact" class="button-outline width100 action-btn-1">Contact</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
