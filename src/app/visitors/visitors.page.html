@@ -8,6 +8,8 @@
 
 <ion-content no-padding>
   <div class="iframe-container">
-    <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(iframeHref)' height="100%" width="100%" no-margin no-padding frameborder="0"></iframe>
+    <iframe [src]='iframeHref' height="100%" width="100%" no-margin no-padding frameborder="0"></iframe>
+<!--    <iframe [src]='iframeUrl()' height="100%" width="100%" no-margin no-padding frameborder="0"></iframe>-->
+<!--    <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(iframeHref)' height="100%" width="100%" no-margin no-padding frameborder="0"></iframe>-->
   </div>
 </ion-content>

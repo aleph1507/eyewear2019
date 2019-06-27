@@ -3,7 +3,7 @@
     <ion-title class="padding-left-2">
       <ion-item class="dark-bg white-text" no-padding>
         <span item-left margin-end class="font-lg padding-top-3"><ion-icon name="ios-search"></ion-icon></span>
-        <ion-input placeholder="Search Exhibitors 2018"></ion-input>
+        <ion-input #search placeholder="Search Exhibitors 2018" (ionInput)="onSearch($event.target.value)"></ion-input>
       </ion-item>
     </ion-title>
   </ion-toolbar>
@@ -23,15 +23,15 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-list class="dark-bg scrollable-list-4 no-padding-top">
-            <ion-item *ngFor="let ex of exhibitors" routerLink="{{ex.name}}" class="dark-bg">
+          <ion-list #exhibitorsList class="dark-bg scrollable-list-4 no-padding-top">
+            <ion-item *ngFor="let ex of displayedExhibitors" routerLink="{{ex.id}}" class="dark-bg">
               <ion-grid>
                 <ion-row>
                   <ion-col size="8">
-                    <ion-label class="list-item-text-1">{{ex.name}}</ion-label>
+                    <ion-label class="list-item-text-1">{{ex.title}}</ion-label>
                   </ion-col>
                   <ion-col size="4">
-                    <ion-label class="list-item-text-2">Stand {{ex.stand}}</ion-label>
+                    <ion-label class="list-item-text-2">Stand {{ex.acf.stand_scheda}}</ion-label>
                   </ion-col>
                 </ion-row>
               </ion-grid>
@@ -39,7 +39,7 @@
           </ion-list>
         </ion-col>
       </ion-row>
-      <div class="padding-horizontal-3">
+      <div *ngIf="loaded" class="padding-horizontal-3">
         <ion-row>
           <ion-col no-padding>
             <h1 class="white-text screen-title-1">Exhibitors 2018</h1>

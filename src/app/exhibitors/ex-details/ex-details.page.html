@@ -3,12 +3,44 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/exhibitors"></ion-back-button>
     </ion-buttons>
-    <ion-title>ex-details</ion-title>
+    <ion-title class="ion-text-wrap">{{exhibitor.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <p>
-    get exhibitor {{exhibitor}}
-  </p>
+  <ion-grid *ngIf="exhibitor !== undefined && exhibitor !== null">
+    <ion-row>
+      <ion-col>
+        <ion-img no-padding src="/assets/img/reiban3za100.png" alt="banner"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1>{{exhibitor.acf.address_scheda}}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-icon name="ios-call" class="dim-light-text"></ion-icon> {{exhibitor.acf.phone_scheda}}
+      </ion-col>
+    </ion-row>
+    <ion-row class="margin-top-2">
+      <ion-col>
+        <a href="mailto:{{exhibitor.acf.email_scheda}}" class="white-text no-decoration"><ion-icon src="/assets/svg_icons/fa/envelope-regular.svg" class="dim-light-text"></ion-icon> {{exhibitor.acf.email_scheda}}</a>
+      </ion-col>
+    </ion-row>
+    <ion-row class="margin-top-2">
+      <ion-col>
+        <a href="{{exhibitor.acf.website_scheda}}" class="white-text no-decoration"><ion-icon src="/assets/svg_icons/fa/external-link-alt-solid.svg" class="dim-light-text"></ion-icon> {{exhibitor.acf.website_scheda}}</a>
+      </ion-col>
+    </ion-row>
+    <ion-row class="margin-top-3">
+      <ion-col size="6">
+        <div class="tag-div">stand {{exhibitor.acf.stand_scheda}}</div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="tag-div">area {{exhibitor.acf.area_scheda}}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

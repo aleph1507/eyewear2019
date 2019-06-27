@@ -14,7 +14,12 @@ export class VisitorsPage implements OnInit {
   constructor(private langService: LangService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-    this.iframeHref = 'http://dateyewear.gwcworld.com/mobileform?lang=' + this.langService.curLang;
+    this.iframeHref = this.sanitizer.bypassSecurityTrustResourceUrl('http://dateyewear.gwcworld.com/mobileform?lang='
+        + this.langService.curLang);
   }
+
+  // iframeUrl() {
+  //   return this.sanitizer.bypassSecurityTrustResourceUrl(this.iframeHref);
+  // }
 
 }
