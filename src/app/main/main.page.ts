@@ -6,7 +6,7 @@ import {LangService} from '../lang.service';
   templateUrl: 'main.page.html',
   styleUrls: ['main.page.scss']
 })
-export class MainPage implements OnInit{
+export class MainPage implements OnInit {
 
   private contentClass = 'main-en';
 

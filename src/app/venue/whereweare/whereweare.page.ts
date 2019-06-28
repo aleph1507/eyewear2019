@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Environment, GoogleMap, GoogleMapOptions, GoogleMaps} from '@ionic-native/google-maps';
+import {Environment, GoogleMap, GoogleMapOptions, GoogleMaps} from '@ionic-native/google-maps/ngx';
 import {NavController, Platform} from '@ionic/angular';
 
 @Component({
@@ -7,31 +7,45 @@ import {NavController, Platform} from '@ionic/angular';
   templateUrl: './whereweare.page.html',
   styleUrls: ['./whereweare.page.scss'],
 })
-export class WherewearePage implements OnInit {
+export class WherewearePage implements OnInit, AfterViewInit {
   @ViewChild('map') mapElement: ElementRef;
   public map: GoogleMap;
+  // public coords = { latitude: }
 
   constructor(public navCtrl: NavController,
               private _googleMaps: GoogleMaps,
               public platform: Platform) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.platform.ready();
+    await this.initMap();
+  }
+
+  ngAfterViewInit(): void {
+    // this.platform.ready().then(() => {
+    //   this.initMap();
+    // });
+    // this.initMap();
   }
 
   // ngAfterViewInit(): void {
   //   this.initMap();
   // }
 
-  ionViewDidLoad() {
-    this.platform.ready().then(() => {
-      this.initMap();
-    });
-  }
+  // ionViewDidLoad() {
+  //   this.platform.ready().then(() => {
+  //     this.initMap();
+  //   });
+  // }
+
+  // initMap() {
+    // const POSITION = { lat: }
+  // }
 
   initMap() {
     Environment.setEnv({
-      API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyDdNT_6cELx5o9EonsF0amX2yWj0W-qjRs',
-      API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyDdNT_6cELx5o9EonsF0amX2yWj0W-qjRs'
+      API_KEY_FOR_BROWSER_RELEASE: 'AIzaSyBTGwdVbOHGA8EZXv-jrEzOZOlzev552dI',
+      API_KEY_FOR_BROWSER_DEBUG: 'AIzaSyBTGwdVbOHGA8EZXv-jrEzOZOlzev552dI'
     });
 
     const mapOptions: GoogleMapOptions = {
