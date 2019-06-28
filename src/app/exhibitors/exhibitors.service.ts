@@ -22,6 +22,14 @@ export class ExhibitorsService {
 
   constructor(private http: HttpClient) { }
 
+  isExhibitorsEmpty() {
+    return this._exhibitors.length === 0;
+  }
+
+  getSingleExhibitorAPI(id: number): Observable<Exhibitor> {
+    return this.http.get<Exhibitor>('https://dateyewear.com/wp-admin/admin-ajax.php?action=get_exhibitor_by_id&id=' + id);
+  }
+
   get exhibitors(): Exhibitor[] | Observable<Exhibitor[]> {
     if (this._exhibitors.length === 0) {
       return this.http.get<Exhibitor[]>('https://dateyewear.com/wp-admin/admin-ajax.php?action=get_all_exhibitors');

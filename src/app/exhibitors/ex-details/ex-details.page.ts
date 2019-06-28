@@ -24,8 +24,7 @@ export class ExDetailsPage implements OnInit {
         return;
       }
       this.exhibitor = this.exhibitorsService.getExhibitor(+paramMap.get('exhibitorId'));
-      this.exhibitor.title = this.addBRtoTitle(this.exhibitor.title);
-      console.log('this.exhibitor.title: ', this.exhibitor.title);
+      this.exhibitor.title = decodeURIComponent(this.addBRtoTitle(this.exhibitor.title));
     });
   }
 
@@ -34,9 +33,9 @@ export class ExDetailsPage implements OnInit {
     if (title.length > 20) {
       tArray = title.split(' ');
       tArray.splice(tArray.length / 2, 0, '<br>');
-      this.addBRtoTitle(tArray.join(' '));
+      // this.addBRtoTitle(tArray.join(' '));
     }
-    return tArray;
+    return tArray.join(' ');
   }
 
   ngOnInit() {

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/exhibitors"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-wrap">{{exhibitor.title}}</ion-title>
+    <ion-title class="ion-text-wrap" [innerHTML]="exhibitor.title"></ion-title>
   </ion-toolbar>
 </ion-header>
 

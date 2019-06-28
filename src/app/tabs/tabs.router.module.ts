@@ -47,6 +47,10 @@ const routes: Routes = [
             loadChildren: '../venue/venue.module#VenuePageModule'
           },
           {
+            path: 'whereweare',
+            loadChildren: '../venue/whereweare/whereweare.module#WherewearePageModule'
+          },
+          {
             path: 'hotels',
             loadChildren: '../venue/hotels/hotels.module#HotelsPageModule'
           },
